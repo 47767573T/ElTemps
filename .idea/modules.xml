@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ElTemps.iml" filepath="$PROJECT_DIR$/ElTemps.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit-2.0.0-beta2/retrofit-2.0.0-beta2.iml" filepath="$PROJECT_DIR$/retrofit-2.0.0-beta2/retrofit-2.0.0-beta2.iml" />
     </modules>
   </component>
 </project>
