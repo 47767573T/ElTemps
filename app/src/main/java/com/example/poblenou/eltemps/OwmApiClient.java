@@ -32,7 +32,7 @@ interface OpenWeatherMapService {
                                 @Query("units") String units,
                                 @Query("cnt") Integer num,
                                 @Query("appid") String appid);
-
+    
     //@POST()
 
 }
