@@ -11,13 +11,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class ElTempsFragment extends Fragment {
 
-    private ArrayList<String> tiempoCadaDiaArray = new ArrayList<>();
     private ArrayAdapter tiempoCadaDiaAdapter;
 
     private ListView lvElTempsMain;
@@ -43,7 +43,7 @@ public class ElTempsFragment extends Fragment {
 
         vRoot = inflater.inflate(R.layout.fragment_main, container, false);
 
-        /*String[] data = {
+        String[] data = {
                 "Lun 23/6 - Soleado - 31/17",
                 "Mar 24/6 - Lluvioso - 31/17",
                 "Mie 25/6 - Soleado - 31/17",
@@ -51,8 +51,8 @@ public class ElTempsFragment extends Fragment {
                 "Vie 27/6 - Nublado - 31/17",
                 "Sab 28/6 - Tormenta - 31/17",
                 "Sab 29/6 - Granizo - 31/17"
-        };*/
-
+        };
+        ArrayList<String> tiempoCadaDiaArray = new ArrayList<>(Arrays.asList(data));
 
         lvElTempsMain = (ListView)vRoot.findViewById(R.id.lvElTempsMain);
 
@@ -62,6 +62,7 @@ public class ElTempsFragment extends Fragment {
                                 R.id.textView1,
                                 tiempoCadaDiaArray
         );
+        lvElTempsMain.setAdapter(tiempoCadaDiaAdapter);
 
         return vRoot;
     }
@@ -84,6 +85,6 @@ public class ElTempsFragment extends Fragment {
 
     private void refresh() {
         OwmApiClient apiClient = new OwmApiClient();
-        apiClient.updateForecasts(tiempoCadaDiaAdapter);
+        apiClient.updateForecasts(tiempoCadaDiaAdapter, getContext());
     }
 }
